@@ -1,7 +1,7 @@
 ---
 -
   become: true
-  hosts: group2
+  hosts: groupe2
   tasks:
     -
       name: "ensure latest httpd is installed"
