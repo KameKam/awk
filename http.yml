@@ -1,6 +1,10 @@
 ---
+-
+  become: true
+  hosts: group1
   tasks:
-  - name: ensure apache is at the latest version
-    yum:
-      name: httpd
-      state: latest
+    -
+      name: "ensure latest httpd is installed"
+      yum:
+        name: httpd
+        state: latest
