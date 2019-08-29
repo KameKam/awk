@@ -1,22 +1,22 @@
 - name: Add disks to virtual machine using UUID
     vars_prompt:
-    - name: vcenter_hostname
-      prompt: "Which VCENTER ?"
-      private: no
-    - name: datacenter_name
-      prompt: "Which VCENTER ?"
-      private: no
-	- name: vcenter_username
-      prompt: "What is your username ?"
-      private: no
-    - name: vcenter_password
-      prompt: "What is your password?"
-	- name: vm_name
-      prompt: "Vm for the extension :"
-	  private:no
-	- name: size
-      prompt: "size to extend: ?"
-	  private:no
+      - name: vcenter_hostname
+        prompt: "Which VCENTER ?"
+        private: no
+      - name: datacenter_name
+        prompt: "Which VCENTER ?"
+        private: no
+      - name: vcenter_username
+        prompt: "What is your username ?"
+        private: no
+      - name: vcenter_password
+        prompt: "What is your password?"
+      - name: vm_name
+        prompt: "Vm for the extension :"
+        private:no
+      - name: size
+        prompt: "size to extend: ?"
+        private:no
   vmware_guest_disk:
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
