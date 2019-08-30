@@ -1,7 +1,7 @@
 ---
 -
   become: true
-  hosts: group1
+  hosts: all
   tasks:
    - name: Add disks to virtual machine using UUID
        vars_prompt:
