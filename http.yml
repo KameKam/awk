@@ -4,20 +4,20 @@
   hosts: all
   tasks:
    - name: Add disks to virtual machine using UUID
-      vmware_guest_disk:
-       hostname: "{{ vcenter_hostname }}"
-       username: "{{ vcenter_username }}"
-       password: "{{ vcenter_password }}"
-       datacenter: "{{ datacenter_name }}"
-       validate_certs: no
-       name: "{{ vm_name }}"
-       disk:
-         - size: "{{ size }}"
-           type: thick
-           state: present
-           autoselect_datastore: True
-           scsi_controller: 0
-           scsi_type: 'paravirtual'
-           unit_number: 1
-     delegate_to: localhost
-     register: disk_facts
+       vmware_guest_disk:
+         hostname: "{{ vcenter_hostname }}"
+         username: "{{ vcenter_username }}"
+         password: "{{ vcenter_password }}"
+         datacenter: "{{ datacenter_name }}"
+         validate_certs: no
+         name: "{{ vm_name }}"
+         disk:
+          - size: "{{ size }}"
+            type: thick
+            state: present
+            autoselect_datastore: True
+            scsi_controller: 0
+            scsi_type: 'paravirtual'
+            unit_number: 1
+       delegate_to: localhost
+       register: disk_facts
